@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equip="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/login.css' %}">
+</head>
+<body>
+    <div class="bg-image">
+        <div class="signup-container">
+            <h1>Login</h1>
+            <h2>Unlimitted movies, TV shows, and more.</h2>
+            <div>
+                <style>
+                    h5{
+                        color:red;
+                    }
+                </style>
+                {% for message in messages %}
+                <h5>{{message}}</h5>
+                {% endfor %}
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="password" name="password">
+                <button style="color: white" type="submit" class="signup-btn">Login</button>
+            </form>
+            <div>
+                <style>
+                    h6{
+                        margin: 0;
+                        padding-top: 10px;
+                        color:aliceblue;
+                        text-align: center;
+                        font-size: small;
+                        font-weight: 100;
+                    }
+                    
+                    a{
+                        color:aliceblue;
+                        text-decoration: underline;
+                    }
+
+                    a:hover{
+                        color: red;
+                    }
+                </style>
+                <h6>Ready to watch? Enter your email to create or restart your membership</h6>
+                <h6>Already have an account, click here to <a href='signup'>Sign Up</a></h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
